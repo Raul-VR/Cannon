@@ -72,9 +72,10 @@ def move():
 
     for target in targets:
         if not inside(target):
-            return
+            # RAVR - 24/03/2022 - The game is now infinite and the balls appear in the start again
+            targets[targets.index(target)].x = 200
     
-    # RMEV - 22/03/2022 - Whee increased the speed of the projectile and the balls
+    # RMEV - 22/03/2022 - We increased the speed of the projectile and the balls
     ontimer(move, 10)
 
 
